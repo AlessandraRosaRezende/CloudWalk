@@ -1,327 +1,333 @@
-**Análise de Dados e Prevenção de Fraudes**
+# **Análise de Dados e Prevenção de Fraudes**
 
-**Parte 1: Compreensão da Indústria de Pagamentos**
+**Autor:** Alessandra Rosa Rezende  
+**Data:** 01/11/24
 
-**1\. Fluxo de Dinheiro, Fluxo de Informações e Principais Atores**
+## **Parte 1: Compreensão da Indústria de Pagamentos**
 
-Fluxo Financeiro:  
-\- Movimento de fundos do banco do titular do cartão (emissor) para o banco do comerciante (adquirente)  
-\- Transferência realizada através das redes de pagamento  
-\- Dedução de taxas durante o processo
+### **1\. Fluxo de Dinheiro, Fluxo de Informações e Principais Atores**
 
-Fluxo de Informações:  
-\- Troca segura de dados transacionais  
-\- Gateways transmitem dados do cartão ao adquirente  
-\- Verificação através da rede de pagamento  
-\- Autorização ou negação pelo emissor
+**Fluxo Financeiro:**  
+É o movimento de fundos do banco do titular do cartão (emissor) para o banco do comerciante (adquirente), realizado por meio de redes de pagamento, com taxas deduzidas ao longo do processo.
 
-Principais Atores:  
-\- Emissor: Banco do titular do cartão  
-\- Adquirente: Banco do comerciante  
-\- Gateway de Pagamento: Provedor de tecnologia  
-\- Rede de Pagamento: Visa, Mastercard, etc.
+**Fluxo de Informações:**
 
-A indústria de pagamentos envolve várias entidades, cada uma com um papel essencial para que as transações sejam processadas de maneira segura. O **fluxo financeiro** se refere ao movimento de fundos do banco do titular do cartão (emissor) para o banco do comerciante (adquirente) através das redes de pagamento. Já o **fluxo de informações** abrange a troca de dados entre essas entidades para autenticar e autorizar os pagamentos. Os principais atores incluem **emissores**, **adquirentes**, **gateways de pagamento** e **redes de pagamento**.
+* Troca segura de dados transacionais.  
+* Gateways transmitem dados do cartão ao adquirente.  
+* Verificação através da rede de pagamento.  
+* Autorização ou negação pelo emissor.
 
-**2\. Diferenças entre Adquirente, Sub-adquirente e Gateway de Pagamento**
+**Principais Atores:**
 
-Adquirente: o banco que processa pagamentos em cartões de crédito ou débito em nome do comerciante.  
-\- Processa transações  
-\- Liquida fundos na conta do comerciante  
-\- Mantém relação direta com redes de cartão
+* **Emissor**: Banco do titular do cartão.  
+* **Adquirente**: Banco do comerciante.  
+* **Gateway de Pagamento**: Provedor de tecnologia que facilita a conexão e transmissão de dados.  
+* **Rede de Pagamento**: Plataformas como Visa, Mastercard, etc.
 
-Sub-adquirente: Um intermediário que colabora com o adquirente, geralmente atendendo comerciantes menores, oferecendo infraestrutura de pagamento essencial.  
-\- Intermediário financeiro  
-\- Atende pequenos negócios  
-\- Não tem filiação direta às redes de cartão
+**Descrição Geral:**  
+A indústria de pagamentos envolve várias entidades, cada uma desempenhando um papel essencial no processamento seguro das transações. O fluxo financeiro refere-se ao movimento de fundos do banco do titular do cartão (emissor) para o banco do comerciante (adquirente) através das redes de pagamento. O fluxo de informações envolve a troca de dados entre essas entidades para autenticar e autorizar pagamentos. Os principais atores incluem emissores, adquirentes, gateways de pagamento e redes de pagamento.
 
-Gateway de Pagamento: Provedor de tecnologia que conecta os comerciantes ao adquirente, facilitando pagamentos online ao transmitir informações de maneira segura.  
-\- Tecnologia de criptografia  
-\- Transmite dados ao adquirente  
-\- Fundamental em transações online
+---
 
-**3\. Chargebacks**
+### **2\. Diferenças entre Adquirente, Sub-Adquirente e Gateway de Pagamento**
 
-Chargeback:  
-O chargeback ocorre quando um titular de cartão contesta uma transação. Diferente de um cancelamento, que ocorre antes da transferência dos fundos, o chargeback reverte uma transação já concluída, afetando tanto o comerciante quanto o adquirente. Em muitos casos, chargebacks estão relacionados a fraudes, pois o titular do cartão pode negar compras que não fez ou não recebeu.  
-\- Reversão de transação já concluída  
-\- Iniciado pelo banco do titular  
-\- Causas: fraude ou insatisfação  
-\- Diferente de cancelamento (que ocorre antes da finalização)  
-\- Impacta financeiramente comerciantes
+* **Adquirente**: O banco que processa pagamentos em cartões de crédito ou débito em nome do comerciante.  
+  * Processa transações.  
+  * Liquida fundos na conta do comerciante.  
+  * Mantém uma relação direta com as redes de cartão.  
+* **Sub-Adquirente**: Um intermediário que trabalha com o adquirente, geralmente atendendo comerciantes menores e fornecendo infraestrutura de pagamento essencial.  
+  * Intermediário financeiro.  
+  * Atende pequenos negócios.  
+  * Não possui uma afiliação direta com redes de cartão.  
+* **Gateway de Pagamento**: Um provedor de tecnologia que conecta comerciantes e adquirentes, facilitando a transmissão segura de dados em pagamentos online.  
+  * Tecnologia de criptografia.  
+  * Transmite dados para o adquirente.  
+  * Essencial em transações online.
 
-**4\. Sistema anti-fraude**
+  ---
 
-Um sistema antifraude é um conjunto de ferramentas e processos que visa detectar, prevenir e mitigar fraudes em transações financeiras. No contexto de uma adquirente (empresa que processa pagamentos com cartão), o sistema antifraude é crucial para:
+  ### **3\. Chargebacks**
 
-Análise em Tempo Real:
+* **Chargeback**: Um chargeback ocorre quando um titular de cartão contesta uma transação. Diferente de um cancelamento, que ocorre antes da transferência de fundos, o chargeback reverte uma transação já concluída, impactando tanto o comerciante quanto o adquirente. Em muitos casos, chargebacks estão relacionados a fraudes, pois os titulares de cartão podem contestar compras que não realizaram ou não receberam.  
+  * Reversão de uma transação já concluída.  
+  * Iniciado pelo banco do titular.  
+  * Causas: fraude ou insatisfação.  
+  * Diferente de cancelamento (que ocorre antes da finalização).  
+  * Impacta financeiramente os comerciantes.
 
-* Verifica cada transação instantaneamente  
-* Avalia padrões de comportamento do comprador  
-* Analisa dados do dispositivo usado na compra  
-* Verifica a localização geográfica
+  ---
 
-Principais Verificações:
+  ### **4\. Sistema Anti-fraude**
 
-* Velocidade entre transações  
-* Valor das compras  
-* Histórico do cartão  
-* Comportamento típico do cliente  
-* Dados consistentes (endereço, CEP, etc.)  
-* Device fingerprint (identificação do dispositivo)
+* **Análise em Tempo Real**:  
+  * Verifica cada transação instantaneamente.  
+  * Avalia padrões de comportamento do comprador.  
+  * Analisa dados do dispositivo usado na compra.  
+  * Verifica a localização geográfica.  
+* **Principais Verificações**:  
+  * Velocidade entre transações.  
+  * Valores das compras.  
+  * Histórico do cartão.  
+  * Comportamento típico do cliente.  
+  * Dados consistentes (endereço, CEP, etc.).  
+  * Impressão digital do dispositivo.  
+* **Pontuação de Risco**:  
+  * Cada transação recebe uma pontuação de risco.  
+  * Baseada em dezenas de variáveis.  
+  * Define se a transação será:  
+    * Aprovada automaticamente.  
+    * Enviada para revisão manual.  
+    * Recusada imediatamente.  
+* **Regras de Negócio**:  
+  * Limites de valor por transação.  
+  * Quantidade máxima de tentativas.  
+  * Bloqueio geográfico.  
+  * Restrições por categoria de produto.  
+  * Regras específicas por comerciante.  
+* **Machine Learning**:  
+  * Aprende com o histórico de transações.  
+  * Identifica novos padrões de fraude.  
+  * Adapta-se a novas técnicas fraudulentas.  
+  * Reduz falsos positivos.  
+* **Monitoramento**:  
+  * Rastreamento em tempo real.  
+  * Alertas para atividades suspeitas.  
+  * Relatórios de desempenho.  
+  * Análise de chargebacks.
 
-Scoring de Risco:
+**Benefícios para o Adquirente**:
 
-* Cada transação recebe uma pontuação de risco  
-* Baseado em dezenas de variáveis  
-* Define se a transação será:  
-  * Aprovada automaticamente  
-  * Enviada para revisão manual  
-  * Recusada imediatamente
+* Redução de perdas financeiras.  
+* Maior segurança nas transações.  
+* Melhora na experiência para clientes legítimos.  
+* Redução da taxa de chargebacks.  
+* Proteção da reputação.
 
-Regras de Negócio:
+**Integração com Outros Sistemas**:
 
-* Limites de valor por transação  
-* Quantidade máxima de tentativas  
-* Bloqueios por região geográfica  
-* Restrições por categoria de produto  
-* Regras específicas por merchant
+* Base de dados negativa.  
+* Listas de alerta.  
+* Bureaus de crédito.  
+* Sistemas de autenticação (3D Secure).  
+  ---
 
-Machine Learning:
+  ## **Parte 2: Análise do Caso \- Resposta a Chargeback por Produto Não Entregue**
 
-* Aprende com histórico de transações  
-* Identifica novos padrões de fraude  
-* Adapta-se a novas técnicas fraudulentas  
-* Reduz falsos positivos
+**Situação Apresentada**
 
-Monitoramento:
+* O cliente contesta a decisão de chargeback.  
+* Motivo do chargeback: "Produto/Serviço não fornecido."  
+* A defesa inicial foi rejeitada pelo banco emissor.  
+* O cliente está insatisfeito e afirma que o produto foi entregue.  
+* O cliente expressa forte frustração e decepção.
 
-* Acompanhamento em tempo real  
-* Alertas de atividades suspeitas  
-* Relatórios de performance  
-* Análise de chargebacks
+**Análise da Situação**
 
-Benefícios para a Adquirente:
+**Contexto do Problema**:
 
-* Redução de perdas financeiras  
-* Maior segurança nas transações  
-* Melhor experiência para clientes legítimos  
-* Menor taxa de chargebacks  
-* Proteção da reputação
+* Existe um conflito entre a declaração do cliente (produto entregue) e a do portador do cartão (produto não recebido).  
+* A documentação inicial foi insuficiente para comprovar a entrega.  
+* O banco emissor manteve a posição do portador do cartão.  
+* O cliente está emocionalmente envolvido e frustrado com a situação.
 
-Integração com Outros Sistemas:
+**Pontos Críticos**:
 
-* Base de dados negativa  
-* Listas de alertas  
-* Bureaus de crédito  
-* Sistemas de autenticação (3D Secure)
+* Necessidade de evidências mais robustas.  
+* Gestão da insatisfação do cliente.  
+* Manutenção do relacionamento comercial.  
+* Resolução profissional do conflito.
 
-**Parte 2: Análise do Case \- Resposta a Chargeback por Produto Não Recebido**
+**Proposta de Ação**
 
-Situação Apresentada  
-\- Cliente contesta decisão de chargeback  
-\- Motivo do chargeback: "Produto/Serviço não fornecido"  
-\- Defesa inicial foi rejeitada pelo banco emissor  
-\- Cliente está insatisfeito e afirma que o produto foi entregue  
-\- Cliente demonstra forte frustração e descontentamento
+**Medidas Imediatas**:
 
-Análise da Situação  
-Contexto do Problema:
+* Realizar uma análise detalhada de toda a documentação existente.  
+* Verificar se existem evidências adicionais que não foram apresentadas na primeira defesa.  
+* Avaliar a possibilidade de uma nova submissão com documentação complementar.
 
-* Existe um conflito entre a afirmação do cliente (produto entregue) e a do portador do cartão (produto não recebido)  
-* A documentação inicial não foi suficiente para comprovar a entrega  
-* O banco emissor manteve a posição do portador do cartão  
-* O cliente está emocionalmente envolvido e frustrado com a situação
+**Comunicação com o Cliente**:
 
-Pontos Críticos:
+* Mostrar compreensão em relação à frustração do cliente.  
+* Explicar claramente o processo de chargeback.  
+* Solicitar documentação adicional para fortalecer o caso:  
+  * Comprovantes de entrega.  
+  * Registros de rastreamento.  
+  * Confirmação de recebimento.  
+  * Qualquer outra evidência relevante.
 
-* Necessidade de evidências mais robustas  
-* Gestão da insatisfação do cliente  
-* Manutenção do relacionamento comercial  
-* Resolução profissional do conflito
+**Próximos Passos**:
 
-Proposta de Ação  
-Medidas Imediatas:
+* Analisar qualquer nova evidência fornecida.  
+* Preparar uma defesa mais sólida se houver documentação suficiente.  
+* Manter o cliente informado durante todo o processo.  
+* Documentar todo o caso para referência futura.
 
-* Realizar uma análise detalhada de toda a documentação existente  
-* Verificar se existem evidências adicionais não apresentadas na primeira defesa  
-* Avaliar a possibilidade de uma nova submissão com documentação complementar
+**Justificativa da Abordagem**
 
-Comunicação com o Cliente:
+**Por que essa abordagem é adequada**:
 
-* Demonstrar compreensão quanto à frustração  
-* Explicar de forma clara o processo de chargeback  
-* Solicitar documentação adicional que possa fortalecer o caso:  
-  * Comprovantes de entrega  
-  * Registros de rastreamento  
-  * Confirmações de recebimento  
-  * Qualquer evidência adicional relevante
+* Mantém o profissionalismo.  
+* Demonstra empatia com a situação do cliente.  
+* Oferece um caminho prático para uma possível resolução.  
+* Preserva o relacionamento comercial.
 
-Próximos Passos:
+**Benefícios Esperados**:
 
-* Analisar novas evidências fornecidas  
-* Preparar uma defesa mais robusta, se houver documentação suficiente  
-* Manter o cliente informado sobre o processo  
-* Documentar todo o caso para referência futura
+* Possibilidade de reverter o chargeback com nova documentação.  
+* Satisfação do cliente mantida.  
+* Fortalecimento do relacionamento comercial.  
+* Aprendizado para casos futuros.
 
-Justificativa da Abordagem  
-Por que esta abordagem é adequada:
+**Conclusão:**  
+Essa situação requer um equilíbrio entre empatia e profissionalismo. Embora o cliente esteja frustrado, é essencial focar na coleta de evidências adicionais para fortalecer o caso. A chave é demonstrar compromisso em ajudar, mantendo uma comunicação clara e profissional enquanto trabalhamos para uma solução eficaz.
 
-* Mantém o profissionalismo  
-* Demonstra empatia com a situação do cliente  
-* Oferece um caminho prático para possível resolução  
-* Preserva o relacionamento comercial
+**Lições para Prevenção**
 
-Benefícios esperados:
+**Melhorias no Processo**:
 
-* Possibilidade de reverter o chargeback com nova documentação  
-* Manutenção da satisfação do cliente  
-* Fortalecimento do relacionamento comercial  
-* Aprendizado para casos futuros
+* Fortalecer a documentação inicial de entregas.  
+* Implementar um sistema robusto de rastreamento.  
+* Criar um checklist de evidências necessárias.  
+* Estabelecer um processo claro de gestão de chargebacks.
 
-Conclusão  
-A situação requer um equilíbrio entre empatia e profissionalismo. Embora o cliente esteja frustrado, é importante manter o foco na coleta de evidências adicionais que possam fortalecer o caso. A chave é demonstrar que estamos comprometidos em ajudar, mantendo uma comunicação clara e profissional, enquanto buscamos uma solução efetiva para o problema.
+**Comunicação Preventiva**:
 
-Aprendizados para Prevenção  
-Melhorias no Processo:
+* Informar os clientes sobre a documentação necessária.  
+* Estabelecer protocolos claros de entrega.  
+* Manter registros detalhados de todas as transações.  
+  ---
 
-* Fortalecer a documentação inicial de entregas  
-* Implementar sistema robusto de rastreamento  
-* Criar checklist de evidências necessárias  
-* Estabelecer processo claro de gestão de chargebacks
+  ## **Parte 3: Análise do Conjunto de Dados \- Dados de Transações Hipotéticas**
 
-Comunicação Preventiva:
+Ao analisar o spreadsheet em busca de possíveis riscos de fraude, as seguintes hipóteses foram levantadas como possíveis indicações de fraude:
 
-* Orientar clientes sobre documentação necessária  
-* Estabelecer protocolos claros de entrega  
-* Manter registros detalhados de todas as transações
+* Transações com valores significativamente acima da mediana do histórico de um usuário.  
+* Transações do mesmo usuário em intervalos curtos de tempo.  
+* Transações realizadas por múltiplos usuários no mesmo dispositivo.  
+* Transações do mesmo usuário com múltiplos cartões.  
+* Transações de múltiplos usuários no mesmo cartão.
 
-**Parte 3: Análise do Spreadsheet \- dados de transações hipotéticas**
+Usando bibliotecas de análise de dados, como `pandas`, `matplotlib` e `seaborn`, o conjunto de dados foi analisado com o objetivo de detectar padrões que ajudassem a validar as hipóteses.
 
-Analisando o spreadsheet em busca de possíveis riscos de fraude, foram verificadas as seguintes situações:
+**Primeiro Tratamento de Dados:**
 
-1. operações com intervalos pequenos, de um mesmo usuário  
-2. operações com valores muito superiores à mediana do histórico de um mesmo usuário   
-3. operações feitas por vários usuários em um mesmo equipamento  
-4. operações de um mesmo usuário com vários cartões diferentes  
-5. operações de vários usuários em um mesmo cartão  
-6.  histórico de chargeback
+Na primeira etapa do processamento de dados, a análise foi focada exclusivamente nos IDs de usuário com mais de uma transação. Ao restringir o conjunto de dados a usuários com múltiplas interações, foi possível identificar padrões de comportamento recorrentes e anomalias transacionais, que são indicadores essenciais de possível fraude. Esse filtro permitiu uma análise mais direcionada, reduzindo o ruído de transações isoladas e aumentando a precisão dos insights relacionados a atividades suspeitas em sessões de usuários.
 
-Aplicando algumas bibliotecas de análise de dados, como pandas, matplotlib e seaborn, verificamos a seguinte situação:  
-![](./src/data/high_value_transactions_plot.png)   
-*Análise de Transações de Alto Valor*  
+![][image1]  
+*Análise de Transações de Alto Valor*
 
-Esse gráfico usa um scatter plot (gráfico de dispersão) para exibir os valores das transações de cada usuário. As transações com valores acima do dobro da média do usuário são destacadas em vermelho.
+### **Hipótese 1: Transações com valores significativamente acima da mediana do histórico de um usuário**
 
-O que mostra: Indica transações incomuns, com valores altos para o mesmo usuário, o que pode ser sinal de comportamento suspeito.
+**Análise de Transações de Alto Valor**  
+Para analisar essa hipótese, foi calculado o valor mediano das transações para cada usuário com mais de uma transação no conjunto de dados.  
+Em seguida, foi criado um gráfico de dispersão para destacar transações com valores pelo menos duas vezes maiores que a mediana para cada usuário, com essas transações destacadas em vermelho.
 
-Como ajuda na detecção de fraudes: Ao observar transações muito acima do padrão individual do usuário, podemos identificar possíveis fraudes por uso indevido do cartão.
+* **O que mostra**: Indica transações incomuns com valores altos para o mesmo usuário, o que pode sinalizar comportamento suspeito.  
+* **Como ajuda na detecção e prevenção de fraudes**: Ao observar transações muito acima do padrão individual do usuário, um sistema pode identificar possível fraude por uso não autorizado do cartão e bloquear a transação.
 
-![](./src/data/close_time_interval_plot.png)  
+---
+
+![][image2]  
 *Análise de Transações em Intervalos de Tempo Próximos*
 
-Esse gráfico usa uma linha do tempo para mostrar transações em intervalos de tempo próximos, analisando o valor de cada uma.
+### **Hipótese 2: Transações do mesmo usuário em intervalos curtos de tempo**
 
-O que mostra: Transações feitas em rápida sucessão podem representar comportamentos automatizados ou anômalos.
+**Análise de Transações em Intervalos de Tempo Próximos**  
+Essa análise utiliza uma linha do tempo para mostrar transações em intervalos de tempo próximos, examinando o valor de cada transação.
 
-Como ajuda na detecção de fraudes: Esse padrão pode sinalizar que uma conta foi comprometida, pois é raro um usuário legítimo realizar múltiplas transações em tão pouco tempo.
+* **O que mostra**: Transações feitas em rápida sucessão podem representar comportamentos automatizados ou anômalos.  
+* **Como ajuda na detecção de fraudes**: Esse padrão pode indicar uma conta comprometida, pois é raro que um usuário legítimo realize múltiplas transações em um curto espaço de tempo.
 
-![](./src/data/shared_device_usage_plot.png)  
+---
+
+![][image3]  
 *Análise de Dispositivos Compartilhados*
 
+### **Hipótese 3: Transações realizadas por múltiplos usuários no mesmo dispositivo**
+
+**Análise de Dispositivos Compartilhados**  
 Um gráfico de barras exibe a quantidade de usuários únicos acessando cada dispositivo.
 
-O que mostra: Mostra dispositivos que são usados por múltiplos usuários, indicando que eles podem ser públicos ou comprometidos.
+* **O que mostra**: Destaca dispositivos utilizados por múltiplos usuários, indicando que podem ser públicos ou comprometidos.  
+* **Como ajuda na detecção de fraudes**: Dispositivos compartilhados são mais propensos a serem pontos de fraude, como em terminais públicos ou dispositivos acessados por várias pessoas.
 
-Como ajuda na detecção de fraudes: Dispositivos compartilhados são mais propensos a serem pontos de fraude, como em terminais públicos ou dispositivos acessados por várias pessoas.
+---
 
-![](./src/data/one_card_mult_usersplot.png)  
+![][image4]  
 *Análise de Cartões Utilizados por Múltiplos Usuários*
 
+### **Hipótese 4: Transações realizadas por múltiplos usuários no mesmo cartão**
+
+**Análise de Cartões Utilizados por Múltiplos Usuários**  
 Um gráfico de barras exibe a quantidade de usuários utilizando um único cartão.
 
-O que mostra: Mostra cartões que podem ser usados por vários usuários diferentes, o que pode indicar clonagem.
+* **O que mostra**: Destaca cartões que podem estar sendo usados por vários usuários diferentes, o que pode indicar clonagem.  
+* **Como ajuda na detecção de fraudes**: Cartões utilizados por mais de um usuário podem indicar fraude em potencial devido à possibilidade de clonagem.
 
-Como ajuda na detecção de fraudes: Cartões utilizados por mais de um usuário podem indicar possíveis fraudes, em virtude da possibilidade de terem sido clonados.
+Ao cruzar as informações levantadas nos arquivos `.csv` específicos, sinalizei transações que atendem a pelo menos dois dos critérios. Esse alerta indica a necessidade de verificação mais aprofundada e análise mais criteriosa. Foram identificadas 145 transações com esse alerta.
 
-Cruzando as informações levantadas nos arquivos .csv específicos, considerei um alerta para as transações que estão presentes em pelo menos 2 dos critérios. Esse alerta indica necessidade de verificação mais a fundo e análise mais criteriosa das mesmas. Estão nesse alerta 145 transações.
+Além disso, cinco transações atendem a três critérios, indicando uma alta probabilidade de fraude.
 
-Temos 5 transações que se enquadram em 3 critérios, o que indica alta probabilidade de fraude.
+---
 
-### Impactos das Visualizações
+## **Sugestões para Prevenção de Fraudes e Chargebacks**
 
-* **Identificação de Anomalias Visuais**: Os gráficos ajudam a visualizar transações anômalas, dispositivos compartilhados e padrões de comportamento suspeitos, facilitando a detecção de fraudes complexas.  
-* **Avaliação do Modelo**: A matriz de confusão fornece uma visão clara sobre a eficácia do modelo, ajudando a ajustar parâmetros e melhorar a precisão ao identificar fraudes.  
-* **Apoio à Decisão**: Essas visualizações auxiliam a equipe de risco e analistas na tomada de decisões rápidas e embasadas, aumentando a segurança e eficiência.
+Para prevenir fraudes e chargebacks, recomendo uma abordagem multifacetada que combine tecnologia, processos e treinamento da equipe. Aqui estão sugestões detalhadas:
 
+### **a. Implementação de Sistemas de Detecção de Fraudes**
 
-### **Sugestão para prevenção de fraudes e/ou chargebacks?**
-
-Para prevenir fraudes e chargebacks, eu recomendaria uma abordagem multifacetada que combine tecnologia, processos e treinamento de equipe. Aqui estão algumas sugestões detalhadas:
-
-#### **a. Implementação de Sistemas de Detecção de Fraudes**
-
-* **Análise Comportamental**: Utilizar algoritmos de machine learning para analisar o comportamento dos usuários em tempo real. Isso inclui identificar padrões de compras que divergem do comportamento habitual do cliente, como compras em locais geográficos não usuais ou valores significativamente maiores do que o normal.  
+* **Análise Comportamental**: Utilizar algoritmos de machine learning para analisar o comportamento dos usuários em tempo real, identificando padrões de compras que divergem do comportamento habitual do cliente, como compras em locais geográficos não usuais ou valores significativamente maiores que o normal.  
 * **Validação de Identidade**: Implementar um sistema de verificação de identidade para novos usuários ou em transações de alto valor. Isso pode incluir autenticação multifator (MFA), onde o usuário deve fornecer uma combinação de informações, como senhas e códigos enviados via SMS ou e-mail.
 
+### **b. Melhorias no Processo de Pagamento**
 
-#### **b. Melhorias no Processo de Pagamento**
-
-* **Uso de Tokenização**: Adotar a tokenização dos dados de pagamento para proteger as informações sensíveis dos clientes durante a transação. Com a tokenização, os dados do cartão são substituídos por um código (token), que não pode ser revertido para o número original sem o sistema apropriado.  
+* **Tokenização**: Adotar a tokenização dos dados de pagamento para proteger as informações sensíveis dos clientes durante a transação. Com a tokenização, os dados do cartão são substituídos por um código (token), que não pode ser revertido para o número original sem o sistema apropriado.  
 * **Monitoramento de Transações**: Estabelecer um sistema de monitoramento em tempo real das transações que possa sinalizar atividades suspeitas imediatamente, permitindo que a equipe de fraude tome medidas rápidas.
 
-#### **c. Educação e Treinamento da Equipe**
+### **c. Educação e Treinamento da Equipe**
 
-* **Capacitação Contínua**: Promover treinamentos regulares para a equipe sobre as melhores práticas de prevenção de fraudes. Isso inclui a identificação de sinais de fraude, como e-mails de phishing e técnicas comuns de engenharia social.  
+* **Capacitação Contínua**: Fornecer treinamentos regulares para a equipe sobre as melhores práticas de prevenção de fraudes. Isso inclui a identificação de sinais de fraude, como e-mails de phishing e técnicas comuns de engenharia social.  
 * **Criação de uma Cultura de Prevenção**: Incentivar todos os colaboradores a participarem ativamente da prevenção de fraudes, criando um ambiente onde todos se sintam responsáveis por relatar atividades suspeitas.
 
+### **d. Colaboração com Instituições Financeiras**
 
-#### **d. Colaboração com Instituições Financeiras**
+* **Parcerias Estratégicas**: Trabalhar com bancos e instituições financeiras para desenvolver estratégias conjuntas de prevenção de fraudes, aproveitando a troca de informações sobre tendências e práticas fraudulentas.
 
-* **Parcerias Estratégicas**: Trabalhar em colaboração com bancos e instituições financeiras para desenvolver estratégias conjuntas de prevenção de fraudes, aproveitando a troca de informações sobre tendências e práticas fraudulentas.
+### **e. Feedback e Melhoria Contínua**
 
+* **Análise de Chargebacks**: Analisar os chargebacks ocorridos para entender as causas e ajustar os processos conforme necessário. Isso pode incluir revisão de políticas de reembolso ou de atendimento ao cliente.
 
-#### **e. Feedback e Melhoria Contínua**
+---
 
-* **Análise de Chargebacks**: Analisar os chargebacks ocorridos para entender as causas raízes e ajustar os processos conforme necessário. Isso pode incluir revisão de políticas de reembolso ou de atendimento ao cliente.
-
-### **Crie uma solução anti-fraude.**
+## **Proposta de Solução Anti-Fraude**
 
 A proposta de uma solução anti-fraude deve considerar a integração de várias ferramentas e práticas que formem um sistema coeso e eficaz. Aqui está uma descrição detalhada da solução:
 
-#### **a. Sistema de Detecção de Fraudes com Machine Learning**
+### **a. Sistema de Detecção de Fraudes com Machine Learning**
 
 * **Modelo Preditivo**: Criar um modelo preditivo utilizando algoritmos de machine learning para classificar transações em tempo real. Esse modelo pode ser treinado com dados históricos de transações, identificando características comuns a transações fraudulentas.  
 * **Análise de Redes Neurais**: Implementar redes neurais para detectar anomalias em padrões de compras, melhorando a precisão na identificação de fraudes em relação a métodos tradicionais.
 
-
-#### **b. Plataforma de Monitoramento e Resposta a Incidentes**
+### **b. Plataforma de Monitoramento e Resposta a Incidentes**
 
 * **Dashboard em Tempo Real**: Desenvolver um painel de controle que permita a visualização de transações em tempo real, com a capacidade de visualizar alertas de transações suspeitas.  
 * **Sistema de Resposta Automática**: Criar um mecanismo que possa automaticamente bloquear transações suspeitas ou alertar a equipe de fraude para que investiguem antes que a transação seja finalizada.
 
-
-#### **c. Integração de APIs para Verificação de Identidade**
+### **c. Integração de APIs para Verificação de Identidade**
 
 * **APIs de Verificação de Identidade**: Integrar APIs de serviços externos que realizam verificações de identidade, como validação de documentos e verificação de endereços, para garantir que o comprador é quem afirma ser.
 
-
-#### **d. Educacional e Informativa para o Cliente**
+### **d. Campanhas Educacionais para o Cliente**
 
 * **Campanhas de Conscientização**: Desenvolver materiais informativos e campanhas para educar os clientes sobre segurança online, incentivando-os a proteger suas informações e relatar atividades suspeitas.
 
+### **e. Revisão Contínua do Sistema**
 
-#### **e. Revisão Contínua do Sistema**
+* **Auditorias Regulares**: Realizar auditorias e testes de estresse regulares no sistema anti-fraude para garantir sua eficácia. Isso envolve revisar as análises de machine learning e atualizar os modelos conforme necessário, considerando novas técnicas de fraude.
 
-* **Auditorias Regulares**: Realizar auditorias e testes de estresse regulares no sistema anti-fraude para garantir sua eficácia. Isso envolve revisar as análises de machine learning e atualizar os modelos conforme necessário, considerando novas técnicas de fraude que possam surgir.
-
-
-#### **f. Relatórios e Análises de Dados**
+### **f. Relatórios e Análises de Dados**
 
 * **Análise Pós-Transação**: Implementar relatórios que analisem as transações que foram marcadas como fraudulentas, incluindo feedback sobre falsos positivos, para melhorar continuamente o modelo de detecção.
-
-
-Com essas sugestões e a criação de uma solução abrangente, acredito que é possível minimizar significativamente o risco de fraudes e chargebacks, protegendo tanto a empresa quanto os consumidores.
 
 [image1]: <data:image/png;base64,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>
 
