@@ -34,15 +34,15 @@ suspicious_criterion_4 = transactions[transactions['user_id'].isin(multiple_cbk_
 suspicious_transactions.append(suspicious_criterion_4[['transaction_id']])
 
 # Critério 5: Usuários com múltiplos cartões
-user_card_count = transactions[transactions['card_number'] == True].groupby('user_id').size()
+user_card_count = transactions.groupby('user_id')['card_number'].nunique()
 multiple_card_users = user_card_count[user_card_count > 1].index
-suspicious_criterion_5 = transactions[transactions['user_id'].isin(multiple_card_users) & (transactions['card_number'] == True)]
+suspicious_criterion_5 = transactions[transactions['user_id'].isin(multiple_card_users)]
 suspicious_transactions.append(suspicious_criterion_5[['transaction_id']])
 
 # Critério 6: Cartões de múltiplos usuários
-card_count = transactions[transactions['user_id'] == True].groupby('card_number').size()
+card_count = transactions.groupby('card_number')['user_id'].nunique()
 multiple_card_count = card_count[card_count > 1].index
-suspicious_criterion_6 = transactions[transactions['card_number'].isin(multiple_card_count) & (transactions['user_id'] == True)]
+suspicious_criterion_6 = transactions[transactions['card_number'].isin(multiple_card_count)]
 suspicious_transactions.append(suspicious_criterion_6[['transaction_id']])
 
 # Compilar todas as transações suspeitas em um único DataFrame
