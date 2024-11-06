@@ -18,7 +18,7 @@ suspicious_transactions.append(suspicious_criterion_1[['transaction_id']])
 
 # Critério 2: Transações de alto valor para um usuário (acima de 2 vezes a média)
 user_avg = transactions.groupby('user_id')['transaction_amount'].mean()
-suspicious_criterion_2 = transactions[transactions.apply(lambda x: x['transaction_amount'] > 2 * user_avg.loc[x['user_id']], axis=1)]
+suspicious_criterion_2 = transactions[transactions.apply(lambda x: x['transaction_amount'] > 2 * user_avg[x['user_id']], axis=1)]
 suspicious_transactions.append(suspicious_criterion_2[['transaction_id']])
 
 # Critério 3: Transações no mesmo dispositivo por diferentes usuários
